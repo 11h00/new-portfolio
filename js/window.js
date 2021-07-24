@@ -29,8 +29,15 @@ class windows{
         `);
         document.querySelectorAll(".win_ac_btn").forEach(el => {
             el.addEventListener("click", sa => {
+                
                 let main = sa.currentTarget;
-                let win_id = main.parentElement.
+                let action = main.attributes.ac.value
+                let win_id = main.parentElement.parentElement.parentElement.parentElement.attributes.id.value
+                switch(action){
+                    case "close":
+                    console.log(win_id)
+                }
+                
             })
         })
     }
