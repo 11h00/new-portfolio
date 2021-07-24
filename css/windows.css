@@ -6,3 +6,6 @@ window > :first-child{
     height: 30px;
     background: #3d3d3d;
 }
+window > :first-child > p{
+    margin: 0;
+}

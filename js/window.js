@@ -10,7 +10,7 @@ class windows{
     }
     open_window(width, height, title, text){
         document.querySelector("section.desktop").insertAdjacentHTML("afterbegin", `
-            <window id="${this.id}" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 9999;">
+            <window id="${this.id}" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 1;">
                 <div>
                     <p>${title}</p>
                     <div>
