@@ -17,6 +17,7 @@ let load_guest_desktop = () => {
     })
     document.getElementById("log_me_out").addEventListener("click", () => {
         document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
+        document.querySelectorAll("window").forEach(ww => ww.remove())
         setTimeout(() => {
             document.querySelector("#login_screen").removeAttribute("inactive")
         }, 2000)
@@ -41,6 +42,7 @@ let load_mathias_desktop = () => {
     })
     document.getElementById("log_me_out2").addEventListener("click", () => {
         document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
+        document.querySelectorAll("window").forEach(ww => ww.remove())
         setTimeout(() => {
             document.querySelector("#login_screen").removeAttribute("inactive")
         }, 2000)
