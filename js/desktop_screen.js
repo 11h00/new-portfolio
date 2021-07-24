@@ -6,15 +6,21 @@ let load_guest_desktop = () => {
     }, 3000)
     document.querySelectorAll(".file").forEach(el => {
         el.addEventListener("click", (evn) => {
+            console.log(evn.currentTarget)
             if (double_clicks){
-                if (evn.currentTarget.attributes.type.value == "link"){
-                    window.location.href = "/matashi!/";
-                }else{
+                try{
+                    if (evn.currentTarget.attributes.type.value == "link"){
+                        window.location.href = "/matashi!/";
+                    }else{
+                        let titll = evn.currentTarget.children[1].innerText
+                        let conren = evn.currentTarget.children[1].attributes.cdn.value
+                        new windows(titll, conren)
+                    }
+                }catch(erreu){
                     let titll = evn.currentTarget.children[1].innerText
                     let conren = evn.currentTarget.children[1].attributes.cdn.value
                     new windows(titll, conren)
                 }
-                
             }
         })
     })
