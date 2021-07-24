@@ -8,6 +8,7 @@ let load_guest_desktop = () => {
         el.addEventListener("click", (evn) => {
             if (double_clicks){
                 console.log("action")
+                console.log(evn.currentTarget)
             }
         })
     })

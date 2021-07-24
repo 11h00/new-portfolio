@@ -10,7 +10,15 @@ class windows{
     }
     open_window(width, height, title, text){
         document.querySelector("section.desktop").insertAdjacentHTML("afterbegin", `
-            <window id="${this.id}" style="position: absolute;width: ${this.width}px;height: ${this.height}px;"></window>
+            <window id="${this.id}" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 9999;">
+                <div>
+                    <p>${title}</p>
+                    <div>
+
+                    </div>
+                </div>
+                <div>${text}</div>
+            </window>
         `);
     }
     close_window(){
