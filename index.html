@@ -49,10 +49,15 @@
     </section>
     <section id="logging_in_screen" class="crt" inactive>
       <article>
-          <h2>Welcome username !</h2>
+          <h2 id="login_welcome">Welcome username !</h2>
           <div style="display: grid;grid-template-columns: repeat(2, 1fr);">
-            <img style="width: 75%;" alt="guest_avatar" class="user_login_pic" src="./img/guest.jpg">
-            <p style="font-size: 4vw;margin: 5px;">username</p>
+            <img style="width: 75%;" alt="guest_avatar" id="_user_login_avatar" class="user_login_pic" src="./img/guest.jpg">
+            <div>
+              <p id="login_welcome_username" style="font-size: 4vw;margin: 5px;text-align: initial;">username</p>
+              <form inactive id="pass_input" class="password_login_field">
+                <input type="text" name="" id=""><button class="login_button_pass">&xrArr;</button>
+              </form>
+            </div>
           </div>
       </article>
     </section>
@@ -95,6 +100,9 @@
   .user_containter{
     display: grid;
     text-align: center;
+  }
+  .password_login_field{
+    background: #6d6d6d94;
   }
   .user_login_pic{
     width: 40%;
@@ -271,12 +279,18 @@
               button.addEventListener("click", (el) => {
                 let main_el = el.currentTarget;
                 console.log(main_el.parentElement.attributes.user.value)
+                document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
+                document.querySelector("#logging_in_screen").removeAttribute("inactive")
                 switch(main_el.parentElement.attributes.user.value){
                   case "mathias777":
-
+                  login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
+                  login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
+                  pass_input.setAttribute("inactive", "true");
+                  _user_login_avatar.src = "./img/mathias.jpg";
                     break;
                   case "guest":
-
+                  login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
+                  login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
                     break;
                 }
               })
