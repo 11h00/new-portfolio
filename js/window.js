@@ -15,10 +15,10 @@ class windows{
                     <p>${title}</p>
                     <div>
                         <ul class="window_actions">
-                            <li ac="close">
+                            <li class="win_ac_btn" ac="close">
                                 X
                             </li>
-                            <li ac="minimize">
+                            <li class="win_ac_btn" ac="minimize">
                                 _
                             </li>
                         </ul>
@@ -27,8 +27,14 @@ class windows{
                 <div><span>${text}</span></div>
             </window>
         `);
+        document.querySelectorAll(".win_ac_btn").forEach(el => {
+            el.addEventListener("click", sa => {
+                let main = sa.currentTarget;
+                let win_id = main.parentElement.
+            })
+        })
     }
     close_window(){
-
+        document.getElementById(this.id).remove()
     }
 }
