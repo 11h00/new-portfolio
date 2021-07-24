@@ -291,7 +291,7 @@
                     _user_login_avatar.src = "./img/mathias.jpg";
                     break;
                   case "guest":
-                    pass_input.removeAttribute("inactive");
+                    pass_input.setAttribute("inactive", "true")
                     login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
                     login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
                     break;
