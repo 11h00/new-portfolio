@@ -411,6 +411,11 @@
                     pass_input.addEventListener("submit", (evn) => {
                       evn.preventDefault();
                       console.log(evn)
+                      pass_input.style.display = "none";
+                      logging_in.style.opacity = 1
+                      setTimeout(() => {
+                        
+                      }, 4000);
                     })
                     break;
                   case "guest":
