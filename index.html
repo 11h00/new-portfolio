@@ -430,6 +430,7 @@
                 document.querySelector("#logging_in_screen").removeAttribute("inactive")
                 switch(main_el.parentElement.attributes.user.value){
                   case "mathias777":
+                    wrong_pass.setAttribute("inactive", "true")
                     logging_in.style.opacity = 0
                     login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
                     login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
