@@ -63,9 +63,14 @@
           </div>
       </article>
     </section>
-    <section inactive id="guest_desktop_screen">
+    <section style="display: grid;" inactive id="guest_desktop_screen">
       <article>
 
+      </article>
+      <article style="width: 100%;" id="taskbar">
+        <ul id="taskbar_list">
+          <li>wow</li>
+        </ul>
       </article>
     </section>
   </main>
@@ -119,6 +124,11 @@
   }
   .hidden{
     opacity: 0;
+  }
+  #taskbar_list{
+    margin: 10px;
+    list-style: none;
+    display: flex;
   }
   .user_containter{
     display: grid;
