@@ -35,7 +35,13 @@
           <h2>Hello user, please choose your account</h2>
           <div class="user_containter">
             <p>MATHIAS777</p>
-
+            <img alt="mathias_avatar" class="user_login_pic" src="">
+            <button>login</button>
+          </div>
+          <div class="user_containter">
+            <p>MATHIAS777</p>
+            <img alt="guest_avatar" class="user_login_pic" src="">
+            <button>login</button>
           </div>
       </article>
     </section>
@@ -77,6 +83,10 @@
   .user_containter{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .user_login_pic{
+    width: 40px;
+    height: 40px;
   }
   body {
     display: flex;
