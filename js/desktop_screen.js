@@ -43,7 +43,7 @@ let load_mathias_desktop = () => {
             if (double_clicks){
                 try{
                     if (evn.currentTarget.attributes.type.value == "link"){
-                        window.location.href = "/matashi!/";
+                        window.open(evn.currentTarget.attributes.link_url.value);
                     }else{
                         let titll = evn.currentTarget.children[1].innerText
                         let conren = evn.currentTarget.children[1].attributes.cdn.value
