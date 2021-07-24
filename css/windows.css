@@ -11,6 +11,10 @@ window > :nth-child(2){
     height: 85%;
     background: gray;
 }
+window > :nth-child(2) > span{
+    color: white;
+}
+
 window > :first-child > p{
     margin: 0;
 }

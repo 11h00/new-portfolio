@@ -17,7 +17,7 @@ class windows{
 
                     </div>
                 </div>
-                <div>${text}</div>
+                <div><span>${text}</span></div>
             </window>
         `);
     }
