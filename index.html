@@ -35,12 +35,12 @@
           <h2>Hello user, please choose your account</h2>
           <div style="display: grid;grid-template-columns: repeat(2, 1fr);">
             <div class="user_containter">
-              <p>MATHIAS777</p>
+              <p class="login_username_text">MATHIAS777</p>
               <img alt="mathias_avatar" class="user_login_pic" src="./img/mathias.jpg">
               <button class="login_button">login</button>
             </div>
             <div class="user_containter">
-              <p>GUEST</p>
+              <p class="login_username_text">GUEST</p>
               <img alt="guest_avatar" class="user_login_pic" src="./img/guest.jpg">
               <button class="login_button">login</button>
             </div>
@@ -100,6 +100,9 @@
     font-family: 'mathias';
     line-height: 2;
     border: none;
+  }
+  .login_username_text{
+    font-size: 3vw;
   }
   body {
     display: flex;
