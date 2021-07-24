@@ -8,6 +8,7 @@
   <title>mathias - bienvenue</title>
   <link rel="manifest" href="asset/manifest.json">
   <link rel="stylesheet" href="./css/crt_css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script src="./js/desktop_screen.js"></script>
 </head>
@@ -66,7 +67,7 @@
     <section style="display: grid;" class="crt" inactive id="guest_desktop_screen">
       <article id="desktop_elements_grid">
         <div class="file">
-          <img src="./img/file_txt.svg" alt="file icon">
+          <i class="far fa-file"></i>
           <p>filename.txt</p>
         </div>
       </article>
@@ -136,6 +137,13 @@
   }
   .file{
     font-family: mathias;
+    text-align: center;
+  }
+  .file > i{
+    font-size: 7vw;
+  }
+  .file > p{
+
   }
   #taskbar_list{
     margin: 10px;
@@ -150,7 +158,9 @@
   }
   #desktop_elements_grid{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    position: absolute;
+    grid-template-columns: repeat(4, 1fr);
     
   }
   .user_containter{
