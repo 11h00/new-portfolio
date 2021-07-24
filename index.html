@@ -55,7 +55,7 @@
             <div>
               <p id="login_welcome_username" style="font-size: 4vw;margin: 5px;text-align: initial;">username</p>
               <form inactive id="pass_input" class="password_login_field">
-                <input type="text" name="" id=""><button class="login_button_pass">&xrArr;</button>
+                <input style="background: #7f7f7f99;" type="text" name="password" id=""><button style="background: #c9c9c9f2;" class="login_button_pass">&xrArr;</button>
               </form>
             </div>
           </div>
@@ -101,8 +101,10 @@
     display: grid;
     text-align: center;
   }
-  .password_login_field{
-    background: #6d6d6d94;
+  .password_login_field, .login_button_pass{
+    border: none;
+    margin-top: 5px;
+    outline: none;
   }
   .user_login_pic{
     width: 40%;
@@ -283,14 +285,15 @@
                 document.querySelector("#logging_in_screen").removeAttribute("inactive")
                 switch(main_el.parentElement.attributes.user.value){
                   case "mathias777":
-                  login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
-                  login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
-                  pass_input.setAttribute("inactive", "true");
-                  _user_login_avatar.src = "./img/mathias.jpg";
+                    login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
+                    login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
+                    pass_input.removeAttribute("inactive")
+                    _user_login_avatar.src = "./img/mathias.jpg";
                     break;
                   case "guest":
-                  login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
-                  login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
+                    pass_input.removeAttribute("inactive");
+                    login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
+                    login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
                     break;
                 }
               })
