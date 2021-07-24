@@ -7,11 +7,14 @@ let load_guest_desktop = () => {
     document.querySelectorAll(".file").forEach(el => {
         el.addEventListener("click", (evn) => {
             if (double_clicks){
-                console.log("action")
-                console.log(evn.currentTarget.children[1].innerText)
-                let titll = evn.currentTarget.children[1].innerText
-                let conren = evn.currentTarget.children[1].attributes.cdn.value
-                new windows(titll, conren)
+                if (el.attributes.type.value == "link"){
+                    window.location.href = "/matashi!/";
+                }else{
+                    let titll = evn.currentTarget.children[1].innerText
+                    let conren = evn.currentTarget.children[1].attributes.cdn.value
+                    new windows(titll, conren)
+                }
+                
             }
         })
     })
@@ -32,11 +35,13 @@ let load_mathias_desktop = () => {
     document.querySelectorAll(".file").forEach(el => {
         el.addEventListener("click", (evn) => {
             if (double_clicks){
-                console.log("action")
-                console.log(evn.currentTarget.children[1].innerText)
-                let titll = evn.currentTarget.children[1].innerText
-                let conren = evn.currentTarget.children[1].attributes.cdn.value
-                new windows(titll, conren, "taskbar_list_2", 1)
+                if (el.attributes.type.value == "link"){
+                    window.location.href = "/matashi!/";
+                }else{
+                    let titll = evn.currentTarget.children[1].innerText
+                    let conren = evn.currentTarget.children[1].attributes.cdn.value
+                    new windows(titll, conren)
+                }
             }
         })
     })
