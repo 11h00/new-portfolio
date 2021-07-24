@@ -2,14 +2,14 @@ window{
     z-index: 9999;
 }
 window > :first-child{
-    width: 100%;
+    width: 180%;
     background: #3d3d3d;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
 }
 window > :nth-child(2){
-    width: 100%;
+    width: 180%;
     /* height: 85%; */
     background: gray;
 }
