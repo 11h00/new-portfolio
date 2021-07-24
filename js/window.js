@@ -3,15 +3,18 @@ class windows{
     height = 200
     id;
     is_minimized = false;
-    constructor(title = "", text = "", width = this.width, height = this.height){
+    constructor(title = "", text = "", tl = "taskbar_list", offset = 0, width = this.width, height = this.height){
+        tl = this.tl
         this.width = width;
         this.height = height
+        this.offset = offset
+        this.tl = "taskbar_list";
         this.id = "window_" + new Date().getTime();
         this.open_window(width, height, title, text)
     }
     open_window(width, height, title, text){
         this.add_to_taskbar(title)
-        document.querySelector("section.desktop").insertAdjacentHTML("afterBegin", `
+        document.querySelectorAll("section.desktop")[this.offset].insertAdjacentHTML("afterBegin", `
             <window id="${this.id}" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 1;">
                 <div>
                     <p>${title}</p>
@@ -44,7 +47,7 @@ class windows{
         })
     }
     add_to_taskbar(title = ""){
-        taskbar_list.insertAdjacentHTML("beforeEnd", `<li id="task_${this.id}">${title}</li>`)
+        document.getElementById(this.tl).insertAdjacentHTML("beforeEnd", `<li id="task_${this.id}">${title}</li>`)
     }
     remove_of_taskbar(){
         document.getElementById("task_" + this.id).remove()

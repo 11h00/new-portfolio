@@ -35,7 +35,7 @@ let load_mathias_desktop = () => {
                 console.log(evn.currentTarget.children[1].innerText)
                 let titll = evn.currentTarget.children[1].innerText
                 let conren = evn.currentTarget.children[1].attributes.cdn.value
-                new windows(titll, conren)
+                new windows(titll, conren, "taskbar_list_2", 1)
             }
         })
     })
