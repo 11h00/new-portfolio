@@ -440,7 +440,12 @@
                       pass_input.style.display = "none";
                       logging_in.style.opacity = 1
                       setTimeout(() => {
-                        
+                        if (1){
+                          load_mathias_desktop()
+                        }else{
+                          pass_input.style.display = "block";
+                          logging_in.style.opacity = 0
+                        }
                       }, 4000);
                     })
                     break;
