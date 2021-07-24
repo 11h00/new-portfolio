@@ -16,4 +16,4 @@ setInterval(() => {
     if (double_clicks != 0){
         double_clicks = 0
     }
-}, 200);
+}, 900);
