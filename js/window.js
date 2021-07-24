@@ -41,6 +41,9 @@ class windows{
             })
         })
     }
+    add_to_taskbar(title = ""){
+        taskbar_list.insertAdjacentHTML("after_begin", `<li>${title}</li>`)
+    }
     close_window(){
         document.getElementById(this.id).remove()
     }
