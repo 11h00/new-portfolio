@@ -39,7 +39,7 @@ let load_mathias_desktop = () => {
             }
         })
     })
-    document.getElementById("log_me_out").addEventListener("click", () => {
+    document.getElementById("log_me_out2").addEventListener("click", () => {
         document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
         setTimeout(() => {
             document.querySelector("#login_screen").removeAttribute("inactive")
