@@ -57,7 +57,7 @@
               <form inactive id="pass_input">
                 <input class="password_login_field" style="background: #7f7f7f99;" type="text" name="password" id=""><button style="background: #c9c9c9f2;" type="submit" class="login_button_pass">&xrArr;</button>
               </form>
-              <p id="logging_in" style="transition: opacity .4s;opacity: 0;">Logging in...</p>
+              <p id="logging_in" style="transition: opacity .4s;opacity: 0;text-align: initial;">Logging in...</p>
             </div>
           </div>
       </article>
@@ -123,6 +123,9 @@
     border: none;
     margin-top: 5px;
     outline: none;
+  }
+  #logging_in::after{
+    animation: normal 2s infinite loading_dots;
   }
   #pass_input{
     transition: opacity .4s;
