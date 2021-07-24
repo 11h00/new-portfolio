@@ -4,9 +4,16 @@ let load_guest_desktop = () => {
     setTimeout(() => {
         document.querySelector("#guest_desktop_screen").removeAttribute("inactive")
     }, 3000)
+    document.querySelectorAll(".file").forEach(el => {
+        el.addEventListener("click", (evn) => {
+            if (double_clicks){
+                console.log("action")
+            }
+        })
+    })
 }
 setInterval(() => {
     if (double_clicks != 0){
         double_clicks = 0
     }
-}, 400);
+}, 200);

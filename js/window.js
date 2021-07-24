@@ -9,4 +9,7 @@ class windows{
     open_window(width, height){
 
     }
+    close_window(){
+        
+    }
 }
