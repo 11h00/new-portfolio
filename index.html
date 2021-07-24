@@ -59,9 +59,10 @@
             <div>
               <p id="login_welcome_username" style="font-size: 4vw;margin: 5px;text-align: initial;">username</p>
               <form inactive id="pass_input">
-                <input class="password_login_field" style="background: #7f7f7f99;" type="text" name="password" id=""><button style="background: #c9c9c9f2;" type="submit" class="login_button_pass">&xrArr;</button>
+                <input autocomplete="off" class="password_login_field" style="background: #7f7f7f99;" type="text" name="password" id=""><button style="background: #c9c9c9f2;" type="submit" class="login_button_pass">&xrArr;</button>
               </form>
               <p id="logging_in" style="transition: opacity .4s;opacity: 0;text-align: initial;    animation: loading_text alternate-reverse infinite linear 1s;">Logging in...</p>
+              <p inactive id="wrong_pass" style="font-family: mathias;color: red;text-align: initial;">WRONG PASSWORD</p>
             </div>
           </div>
       </article>
@@ -435,14 +436,17 @@
                     pass_input.removeAttribute("inactive")
                     _user_login_avatar.src = "./img/mathias.jpg";
                     pass_input.addEventListener("submit", (evn) => {
+                      let input_passerd = document.querySelector("input[name='password']").value;
                       evn.preventDefault();
-                      console.log(evn)
                       pass_input.style.display = "none";
                       logging_in.style.opacity = 1
                       setTimeout(() => {
-                        if (1){
+                        if (input_passerd == "bonjour123"){
                           load_mathias_desktop()
+                          wrong_pass.setAttribute("inactive", "true")
+                          pass_input.style.display = "block";
                         }else{
+                          wrong_pass.removeAttribute("inactive")
                           pass_input.style.display = "block";
                           logging_in.style.opacity = 0
                         }
@@ -450,6 +454,7 @@
                     })
                     break;
                   case "guest":
+                    wrong_pass.setAttribute("inactive", "true")
                     pass_input.setAttribute("inactive", "true")
                     login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
                     login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
