@@ -64,8 +64,11 @@
       </article>
     </section>
     <section style="display: grid;" class="crt" inactive id="guest_desktop_screen">
-      <article>
-
+      <article id="desktop_elements_grid">
+        <div class="file">
+          <img src="./img/file_txt.svg" alt="file icon">
+          <p>filename.txt</p>
+        </div>
       </article>
       <article style="width: 100%;" id="taskbar">
         <ul id="taskbar_list">
@@ -131,6 +134,9 @@
     width: 100%;
     bottom: 0;
   }
+  .file{
+    font-family: mathias;
+  }
   #taskbar_list{
     margin: 10px;
     list-style: none;
@@ -141,6 +147,11 @@
     background: #95959561;
     padding: 1%;
     margin: 0px 5px;
+  }
+  #desktop_elements_grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    
   }
   .user_containter{
     display: grid;
