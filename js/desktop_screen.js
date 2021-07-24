@@ -41,12 +41,18 @@ let load_mathias_desktop = () => {
     document.querySelectorAll(".file").forEach(el => {
         el.addEventListener("click", (evn) => {
             if (double_clicks){
-                if (el.attributes.type.value == "link"){
-                    window.location.href = "/matashi!/";
-                }else{
+                try{
+                    if (evn.currentTarget.attributes.type.value == "link"){
+                        window.location.href = "/matashi!/";
+                    }else{
+                        let titll = evn.currentTarget.children[1].innerText
+                        let conren = evn.currentTarget.children[1].attributes.cdn.value
+                        new windows(titll, conren, "taskbar_list_2", 1)
+                    }
+                }catch(erreu){
                     let titll = evn.currentTarget.children[1].innerText
                     let conren = evn.currentTarget.children[1].attributes.cdn.value
-                    new windows(titll, conren)
+                    new windows(titll, conren, "taskbar_list_2", 1)
                 }
             }
         })
