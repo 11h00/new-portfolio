@@ -43,9 +43,13 @@ class windows{
         })
     }
     add_to_taskbar(title = ""){
-        taskbar_list.insertAdjacentHTML("afterBegin", `<li>${title}</li>`)
+        taskbar_list.insertAdjacentHTML("beforeEnd", `<li id="task_${this.id}">${title}</li>`)
+    }
+    remove_of_taskbar(){
+        document.getElementById("task_" + this.id).remove()
     }
     close_window(){
+        this.remove_of_taskbar()
         document.getElementById(this.id).remove()
     }
 }
