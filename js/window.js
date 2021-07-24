@@ -2,7 +2,7 @@ class windows{
     width = 400
     height = 200
     id;
-    constructor(width = this.width, height = this.height, title = "", text = ""){
+    constructor(title = "", text = "", width = this.width, height = this.height){
         this.width = width;
         this.height = height
         this.id = "window_" + new Date().getTime();
