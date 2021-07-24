@@ -16,6 +16,7 @@ window > :nth-child(2){
 window > :nth-child(2) > span{
     color: white;
     padding: 10px;
+    white-space: pre-line;
 }
 
 window > :first-child > p{
