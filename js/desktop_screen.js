@@ -8,7 +8,10 @@ let load_guest_desktop = () => {
         el.addEventListener("click", (evn) => {
             if (double_clicks){
                 console.log("action")
-                console.log(evn.currentTarget)
+                console.log(evn.currentTarget.children[1].innerText)
+                let titll = evn.currentTarget.children[1].innerText
+                let conren = evn.currentTarget.children[1].attributes.cdn.value
+                new windows(titll, conren)
             }
         })
     })
