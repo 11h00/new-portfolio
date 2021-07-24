@@ -15,6 +15,12 @@ let load_guest_desktop = () => {
             }
         })
     })
+    document.getElementById("log_me_out").addEventListener("click", () => {
+        document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
+        setTimeout(() => {
+            document.querySelector("#login_screen").removeAttribute("inactive")
+        }, 2000)
+    })
 }
 setInterval(() => {
     if (double_clicks != 0){
