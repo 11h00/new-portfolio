@@ -328,7 +328,8 @@
                     login_welcome.innerText = "Welcome " + main_el.parentElement.attributes.user.value + " !";
                     login_welcome_username.innerText = main_el.parentElement.attributes.user.value;
                     logging_in.style.opacity = 1
-                    load_guest_desktop()
+                    setTimeout(() => {load_guest_desktop()}, 3500)
+                   
                     break;
                 }
               })
