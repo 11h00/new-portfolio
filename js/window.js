@@ -9,7 +9,8 @@ class windows{
         this.open_window(width, height, title, text)
     }
     open_window(width, height, title, text){
-        document.querySelector("section.desktop").insertAdjacentHTML("afterbegin", `
+        this.add_to_taskbar(title)
+        document.querySelector("section.desktop").insertAdjacentHTML("afterBegin", `
             <window id="${this.id}" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 1;">
                 <div>
                     <p>${title}</p>
@@ -42,7 +43,7 @@ class windows{
         })
     }
     add_to_taskbar(title = ""){
-        taskbar_list.insertAdjacentHTML("after_begin", `<li>${title}</li>`)
+        taskbar_list.insertAdjacentHTML("afterBegin", `<li>${title}</li>`)
     }
     close_window(){
         document.getElementById(this.id).remove()
