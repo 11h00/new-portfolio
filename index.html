@@ -1,12 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathias Santourian - welcome</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Site officiel de mathias777(mathias santourian), je presente mes project ici" />
+	<meta name="keywords" content="mathias777, mathias_santourian, mathias santourian, santourian, mathias_love_dogs">
+	<meta name="author" content="mathias777">
+  <title>mathias - bienvenue</title>
+  <link rel="manifest" href="asset/manifest.json">
+  <link rel="stylesheet" href="./css/crt_css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 <body>
-    
+  <header></header>
+  <main style="width: 100%;background: #000;height: 100vh;">
+    <section id="terminal_sec">
+      <ul>
+        <li>Waiting for signal..</li>
+      </ul>
+    </section>
+    <section id="loading_sec">
+      <article>
+        <h1>Mathias777</h1>
+        <h3 class="welcome_text">Welcome to mathias777 OS</h3>
+        <h3 class="welcome_text" id="loading_text">Loading</h3>
+      </article>
+    </section>
+    <section id="booting_sec" inactive>
+      <article>
+        <h2 id="mathias777_boot" class="bootloading">Mathias777</h2>
+      </article>
+    </section>
+    <section id="login_screen" class="crt" inactive>
+      <article>
+          <h2>Hello user, please choose your account</h2>
+          <div class="user_containter">
+            <p>MATHIAS777</p>
+
+          </div>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
+<style>
+  @font-face {
+    font-family: mathias;
+    src: url("font/pixelmix.ttf");
+  }
+  @keyframes benve {
+    from{
+      background-image: radial-gradient(#000, #000);
+    }
+    to{
+      background-image: radial-gradient(rgb(91 82 82 / 13%), rgba(90, 90, 90, 0)), linear-gradient(to bottom, #000, #000 2px, #111 3px);
+    }
+  }
+  @keyframes appear {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  @keyframes loading_text {
+    from{
+      color: #3f3;
+    }
+    to{
+      color: rgb(23, 124, 23);
+    }
+  }
+  .hidden{
+    opacity: 0;
+  }
+  .user_containter{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(#000, #000);
+    background-repeat: repeat-y;
+    background-position: center center;
+    background-size: cover, 100% 3px;
+    font-size: calc(10px + 2vw);
+    font-family: "VT323", monospace, sans-serif;
+    color: #3f3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: normal 2s 3s ease-out benve;
+    animation-fill-mode: both;
+  }
+  h1{
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+    animation: normal 1s 1s ease-out appear;
+    animation-fill-mode: forwards;
+  }
+  .welcome_text{
+    opacity: 0;
+    text-align: center;
+    animation: normal 1s 2s ease-out appear;
+    animation-fill-mode: forwards;
+  }
+  #loading_sec, #booting_sec{
+    display: flex;
+    transition: opacity 1s;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  #terminal_sec > ul{
+    list-style: none;
+    padding-inline-start: 10px;
+    font-family: mathias;
+  }
+  #terminal_sec{
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+    animation: normal 2s 3s ease-out appear;
+    font-family: mathias;
+    animation-fill-mode: forwards;
+  }
+  #terminal_sec > ul > li{
+    margin: 10px;
+  }
+  #mathias777_boot{
+    font-family: mathias;
+  }
+  #login_screen{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 100vh;
+    background-image: radial-gradient(rgb(91 82 82 / 13%), rgba(90, 90, 90, 0)), linear-gradient(to bottom, #000, #000 2px, #111 3px);
+  }
+  #login_screen > article {
+    font-family: 'mathias';
+    font-size: 2.1vw;
+  }
+  .bootloading{
+    animation: alternate-reverse linear 1.5s infinite loading_text;
+  }
+  [inactive]{
+    display: none !important;
+    user-select: none !important;
+  }
+</style>
+<script>
+  let booting_sound = new Audio("sounds/pourinfo1.mp3");
+  let timeuu = 200;
+  let terminal_boot = document.querySelector("#terminal_sec > ul");
+  let DisplayBootText = (text) => {
+    terminal_boot.insertAdjacentHTML("beforeend", `
+      <li>${text}</li>
+    `)
+  }
+  document.onreadystatechange = function(){
+    if (this.readyState == "complete"){
+      setTimeout(() => {
+        document.getElementById("loading_sec").classList.add("hidden")
+        setTimeout(() => {DisplayBootText("Starting scripts..")}, 300 + timeuu);
+        timeuu += 700;
+        setTimeout(() => {DisplayBootText("Starting programs..")}, 300 + timeuu);
+        timeuu += 1300;
+        setTimeout(() => {DisplayBootText("Loading watchdog..")}, 300 + timeuu);
+        timeuu += 800;
+        setTimeout(() => {DisplayBootText("Checking for updates..")}, 300 + timeuu);
+        timeuu += 1400;
+        setTimeout(() => {DisplayBootText("Checking user accounts..")}, 300 + timeuu);
+        timeuu += 1100;
+        setTimeout(() => {DisplayBootText("Updating password key agent..")}, 300 + timeuu);
+        timeuu += 2100;
+        setTimeout(() => {DisplayBootText("Loading cool mathias project..")}, 300 + timeuu);
+        timeuu += 700;
+        setTimeout(() => {DisplayBootText("Loading terminal")}, 300 + timeuu);
+        timeuu += 700;
+        setTimeout(() => {DisplayBootText("Cleaning TMP files..")}, 300 + timeuu);
+        timeuu += 2400;
+        setTimeout(() => {DisplayBootText("All done !")}, 300 + timeuu);
+        timeuu += 3000;
+        setTimeout(() => {DisplayBootText("Booting up..")}, 300 + timeuu);
+        setTimeout(() => {
+            document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
+        }, timeuu + 2000)
+        setTimeout(() => {
+          document.querySelector("#booting_sec").removeAttribute("inactive")
+        }, timeuu + 4000)
+        setTimeout(() => {
+          mathias777_boot.innerText = ""
+          mathias777_boot.classList.remove("bootloading")
+          booting_sound.preservesPitch = false;
+          booting_sound.playbackRate = .67;
+          booting_sound.play()
+          setTimeout(() => {
+            mathias777_boot.innerText = "Mat"
+          }, 100)
+          setTimeout(() => {
+            mathias777_boot.innerText = "Mathi"
+          }, 300)
+          setTimeout(() => {
+            mathias777_boot.innerText = "Mathias7"
+          }, 600)
+          setTimeout(() => {
+            mathias777_boot.innerText = "Mathias777"
+          }, 900)
+          setTimeout(() => {
+            mathias777_boot.style.color = "#007eff"
+          }, 1200)
+          setTimeout(() => {
+            document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
+            document.querySelector("#login_screen").removeAttribute("inactive")
+          }, 4000)
+        }, timeuu + 7000)
+        
+      }, 3000);
+    }
+  }
+</script>
