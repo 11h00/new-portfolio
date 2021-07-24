@@ -35,7 +35,7 @@ class windows{
                 let win_id = main.parentElement.parentElement.parentElement.parentElement.attributes.id.value
                 switch(action){
                     case "close":
-                    console.log(win_id)
+                    this.close_window(win_id)
                 }
                 
             })
