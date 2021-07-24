@@ -34,12 +34,12 @@
       <article>
           <h2>Hello user, please choose your account</h2>
           <div style="display: grid;grid-template-columns: repeat(2, 1fr);">
-            <div class="user_containter">
+            <div user="mathias777" class="user_containter">
               <p class="login_username_text">MATHIAS777</p>
               <img alt="mathias_avatar" class="user_login_pic" src="./img/mathias.jpg">
               <button class="login_button">login</button>
             </div>
-            <div class="user_containter">
+            <div user="guest" class="user_containter">
               <p class="login_username_text">GUEST</p>
               <img alt="guest_avatar" class="user_login_pic" src="./img/guest.jpg">
               <button class="login_button">login</button>
@@ -158,6 +158,7 @@
   }
   #mathias777_boot{
     font-family: mathias;
+    user-select: none;
   }
   #login_screen{
     display: flex;
@@ -242,6 +243,15 @@
           setTimeout(() => {
             document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
             document.querySelector("#login_screen").removeAttribute("inactive")
+            document.querySelectorAll(".login_button").forEach(button => {
+              button.addEventListener("click", (el) => {
+                let main_el = el.currentTarget;
+                console.log(main_el.parentElement.attributes.user.value)
+                switch(main_el.parentElement.attributes.user.value){
+                  
+                }
+              })
+            })
           }, 4000)
         }, timeuu + 7000)
         
