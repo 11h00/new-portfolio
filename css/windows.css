@@ -10,7 +10,7 @@ window > :first-child{
 }
 window > :nth-child(2){
     width: 100%;
-    height: 85%;
+    /* height: 85%; */
     background: gray;
 }
 window > :nth-child(2) > span{
