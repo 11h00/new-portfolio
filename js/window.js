@@ -14,7 +14,14 @@ class windows{
                 <div>
                     <p>${title}</p>
                     <div>
-
+                        <ul class="window_actions">
+                            <li ac="close">
+                                X
+                            </li>
+                            <li ac="minimize">
+                                _
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div><span>${text}</span></div>

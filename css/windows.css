@@ -4,6 +4,9 @@ window{
 window > :first-child{
     width: 100%;
     background: #3d3d3d;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 window > :nth-child(2){
     width: 100%;
@@ -18,4 +21,19 @@ window > :nth-child(2) > span{
 window > :first-child > p{
     margin: 0;
     padding: 10px;
+}
+.window_actions{
+    margin: 0;
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px;
+    gap: 15px;
+}
+.window_actions > li{
+    outline: solid;
+    text-align: center;
+    padding: 10% 35% 10% 35%;
+    font-size: 30px;
+    user-select: none;
 }
