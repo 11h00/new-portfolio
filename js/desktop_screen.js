@@ -7,7 +7,7 @@ let load_guest_desktop = () => {
     document.querySelectorAll(".file").forEach(el => {
         el.addEventListener("click", (evn) => {
             if (double_clicks){
-                if (el.attributes.type.value == "link"){
+                if (evn.currentTarget.attributes.type.value == "link"){
                     window.location.href = "/matashi!/";
                 }else{
                     let titll = evn.currentTarget.children[1].innerText
