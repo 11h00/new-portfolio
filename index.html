@@ -13,19 +13,19 @@
 <body>
   <header></header>
   <main style="width: 100%;background: #000;height: 100vh;">
-    <section id="terminal_sec">
+    <section no_cursor id="terminal_sec">
       <ul>
         <li>Waiting for signal..</li>
       </ul>
     </section>
-    <section id="loading_sec">
+    <section no_cursor id="loading_sec">
       <article>
         <h1>Mathias777</h1>
         <h3 class="welcome_text">Welcome to mathias777 OS</h3>
         <h3 class="welcome_text" id="loading_text">Loading</h3>
       </article>
     </section>
-    <section id="booting_sec" inactive>
+    <section no_cursor id="booting_sec" inactive>
       <article>
         <h2 id="mathias777_boot" class="bootloading">Mathias777</h2>
       </article>
@@ -191,8 +191,12 @@
     display: none !important;
     user-select: none !important;
   }
+  [no_cursor]{
+    cursor: none;
+  }
 </style>
 <script>
+  let click_sounds_enabled = false;
   let click_sound = new Audio("sounds/click.mp3")
   let booting_sound = new Audio("sounds/pourinfo1.mp3");
   let timeuu = 200;
@@ -204,7 +208,8 @@
   }
 
   document.addEventListener("click", () => {
-    click_sound.cloneNode(true).play()
+    if (click_sounds_enabled) click_sound.cloneNode(true).play()
+    
   })
   document.onreadystatechange = function(){
     if (this.readyState == "complete"){
@@ -261,6 +266,7 @@
           setTimeout(() => {
             document.querySelectorAll("section").forEach(ww => ww.setAttribute("inactive", "true"))
             document.querySelector("#login_screen").removeAttribute("inactive")
+            click_sounds_enabled = true
             document.querySelectorAll(".login_button").forEach(button => {
               button.addEventListener("click", (el) => {
                 let main_el = el.currentTarget;
