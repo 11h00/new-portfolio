@@ -36,5 +36,6 @@ window > :first-child > p{
     text-align: center;
     padding: 10% 35% 10% 35%;
     font-size: 30px;
+    z-index: 1000;
     user-select: none;
 }
