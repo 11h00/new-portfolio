@@ -5,6 +5,7 @@ class windows{
     is_minimized = false;
     constructor(title = "", text = "", tl = "taskbar_list", offset = 0, width = this.width, height = this.height){
         tl = this.tl
+        this.is_holding = false;
         this.width = width;
         this.height = height
         this.offset = offset
@@ -45,9 +46,13 @@ class windows{
                 
             })
         })
-        document.getElementById(this.id).addEventListener("mouseenter", (event) => {
-            console.log(event)
+        document.getElementById(this.id).addEventListener("mousedown", (event) => {
+            this.is_holding = false;
         })
+        document.getElementById(this.id).addEventListener("mouseup", (event) => {
+            this.is_holding = true
+        })
+        
     }
     add_to_taskbar(title = ""){
         document.getElementById(this.tl).insertAdjacentHTML("beforeEnd", `<li id="task_${this.id}">${title}</li>`)
