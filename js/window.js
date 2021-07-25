@@ -46,10 +46,10 @@ class windows{
                 
             })
         })
-        document.getElementById(this.id).addEventListener("mousedown", (event) => {
+        document.querySelector("window > :first-child").addEventListener("mousedown", (event) => {
             this.is_holding = true;
         })
-        document.getElementById(this.id).addEventListener("mouseup", (event) => {
+        document.querySelector("window > :first-child").addEventListener("mouseup", (event) => {
             this.is_holding = false
         })
         document.body.addEventListener("mousemove", ev => {
