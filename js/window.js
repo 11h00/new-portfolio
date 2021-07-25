@@ -15,7 +15,7 @@ class windows{
     open_window(width, height, title, text){
         this.add_to_taskbar(title)
         document.querySelectorAll("section.desktop")[this.offset].insertAdjacentHTML("afterBegin", `
-            <window id="${this.id}" draggable="true" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 1;">
+            <window id="${this.id}" style="position: absolute;width: ${width}px;height: ${height}px;z-index: 1;">
                 <div>
                     <p>${title}</p>
                     <div>
