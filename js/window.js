@@ -52,6 +52,11 @@ class windows{
         document.getElementById(this.id).addEventListener("mouseup", (event) => {
             this.is_holding = true
         })
+        document.body.addEventListener("mousemove", ev => {
+            if (this.is_holding){
+                console.log(ev)
+            }
+        })
         
     }
     add_to_taskbar(title = ""){
