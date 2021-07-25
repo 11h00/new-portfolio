@@ -47,10 +47,10 @@ class windows{
             })
         })
         document.getElementById(this.id).addEventListener("mousedown", (event) => {
-            this.is_holding = false;
+            this.is_holding = true;
         })
         document.getElementById(this.id).addEventListener("mouseup", (event) => {
-            this.is_holding = true
+            this.is_holding = false
         })
         document.body.addEventListener("mousemove", ev => {
             if (this.is_holding){
