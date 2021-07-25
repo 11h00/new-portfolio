@@ -54,7 +54,9 @@ class windows{
         })
         document.body.addEventListener("mousemove", ev => {
             if (this.is_holding){
-                console.log(ev)
+                document.getElementById(this.id).style.top = ev.clientY + "px"
+                document.getElementById(this.id).style.left = ev.clientX + "px"
+                
             }
         })
         
