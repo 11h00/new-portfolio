@@ -47,6 +47,9 @@ class windows{
         })
         document.getElementById(this.id).addEventListener("drag", (event) => {
             console.log(event)
+            event.currentTarget.style.top = event.screenY
+            event.currentTarget.style.right = event.screenX
+            
         })
     }
     add_to_taskbar(title = ""){
