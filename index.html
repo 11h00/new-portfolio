@@ -232,6 +232,12 @@
     transform: rotate(180deg);
     color: #ffffff;
   }
+  #skip_this{
+    border: solid #3f3;
+    font-family: mathias;
+    padding: 15px;
+    position: absolute;
+  }
   .file:hover{
     background: #80808057;
   }
@@ -443,6 +449,7 @@
           booting_sound.playbackRate = .67;
           booting_sound.play()
           setTimeout(() => {
+            skip_this.remove()
             mathias777_boot.innerText = "Mat"
           }, 100)
           setTimeout(() => {
