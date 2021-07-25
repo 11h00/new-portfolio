@@ -396,7 +396,9 @@
       <li>${text}</li>
     `)
   }
-
+  document.getElementById("skip_this").addEventListener("click", () => {
+      
+  })
   document.addEventListener("click", () => {
     double_clicks++;
     if (click_sounds_enabled) click_sound.cloneNode(true).play()
