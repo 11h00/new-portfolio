@@ -397,7 +397,8 @@
     `)
   }
   document.getElementById("skip_this").addEventListener("click", () => {
-      
+    click_sounds_enabled = true
+    load_guest_desktop()
   })
   document.addEventListener("click", () => {
     double_clicks++;
