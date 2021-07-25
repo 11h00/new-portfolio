@@ -408,6 +408,7 @@
   }
   document.getElementById("skip_this").addEventListener("click", () => {
     skip_this.remove()
+    clearTimeout(time_id)
     click_sounds_enabled = true
     load_guest_desktop()
   })
@@ -418,7 +419,7 @@
   })
   document.onreadystatechange = function(){
     if (this.readyState == "complete"){
-      setTimeout(() => {
+      let time_id = setTimeout(() => {
         document.getElementById("loading_sec").classList.add("hidden")
         setTimeout(() => {DisplayBootText("Starting scripts..")}, 300 + timeuu);
         timeuu += 400;
