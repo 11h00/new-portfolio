@@ -407,6 +407,7 @@
     `)
   }
   document.getElementById("skip_this").addEventListener("click", () => {
+    skip_this.remove()
     click_sounds_enabled = true
     load_guest_desktop()
   })
